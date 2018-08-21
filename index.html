@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="Img/icon.png">
+
+    <title>EMCB | Test Details ---</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Custom styles for this page -->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-lg sticky-top bg-primary flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">EATON | EMCB</a>
+      <button class="navbar-toggler mx-5 my-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse bg-primary" id="navbarSupportedContent">
+
+        <input class="form-control form-control-dark w-100 bg-light" type="text" placeholder="Search" aria-label="Search">
+        <div class="navbar-nav ">
+          <a class="nav-link nav-item text-nowrap" href="#"><i class="fas fa-2x fa-search"></i></a>  
+          <div class="div"></div>
+          <a class="nav-link nav-item text-nowrap" href="#"><i class="fa fa-2x fa-sign-out-alt"></i> Sign-out</i></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <i class="fas fa-2x fa-chart-bar text-primary mr-3"></i>
+                  Dashboard 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-th text-primary mr-3"></i>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item-action elementos">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-chart-pie text-primary mr-3"></i>
+                  Status
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-cogs text-primary mr-3"></i>
+                  Manufacturing
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-cloud text-primary mr-3"></i>
+                  Cloud
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <a class="d-flex align-items-center text-muted" href="#">
+                reports
+                <i class="fas fa-2x fa-plus-circle px-2"></i>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-file-pdf px-2 text-danger mr-3"></i>
+                  Last week
+                </a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-file-pdf px-2 text-danger mr-3"></i>
+                  Last month
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-file-pdf px-2 text-danger mr-3"></i>
+                  Last year
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="fas fa-2x fa-file-excel px-2 text-success mr-3"></i>
+                  Last run
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap  align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="text-secondary"><i class="fas fa-1x fa-chart-bar mr-3 text-primary"></i>EMCB | DashBoard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0 py-3">
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <i class="fa fa-2x fa-calendar-alt"></i>
+                From
+              </button>
+              <button class="btn btn-sm btn-outline-secondary mx-5 dropdown-toggle">
+                <i class="fa fa-2x fa-calendar-alt"></i>
+                To
+              </button>
+              <button class="btn btn-sm btn-outline-danger mx-1"><i class="far fa-2x fa-file-pdf mr-1"></i>Export to PDF</button>
+              <button class="btn btn-sm btn-outline-success mx-1"><i class="far fa-2x fa-file-excel mr-1"></i>Export to Excel</button>
+            </div>
+          </div>
+
+          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+          <hr>
+          <section class="container-fluid my-5 py-5 bg-light" id="DashBoard">
+            <h2 class="text-secondary"><i class="fas fa-1x fa-align-justify mr-3 text-primary"></i>Tests Resume</h2>
+            <div class="row">
+              <div class="col-md-4 text-center justify-content-center align-items-center my-2">
+                <i class="fas fa-5x fa-check-circle text-success"></i><h4 class="my-3">Passed</h4></i>
+                <div class="progress" style="height: 25px;">
+                  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><h5>75%</h5></div>
+                </div>
+              </div>
+              <div class="col-md-4 text-center justify-content-center align-items-center my-2">
+                <i class="fas fa-5x fa-times-circle text-danger"></i><h4 class="my-3">Failed</h4></i>
+                <div class="progress" style="height: 25px;">
+                  <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><h5>25%</h5></div>
+                </div>
+              </div>
+              <div class="col-md-4 text-center justify-content-center align-items-center my-2">
+                <i class="fas fa-5x fa-chart-line text-primary"></i><h4 class="my-3">Yield</h4></i>
+                <div class="progress" style="height: 25px;">
+                  <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><h5>75%</h5></div>
+                </div>
+              </div>
+          </section>
+          <hr>
+
+
+          <h2 class="text-secondary"><i class="fas fa-1x fa-info-circle mr-3 text-primary"></i>Fails Details</h2>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped">
+              <thead>
+                <tr class="table-primary">
+                  <th>Cantidad</th>
+                  <th>Breaker</th>
+                  <th>Serial</th>
+                  <th>Batch</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [1300, 1500, 2000, 2500, 3000, 3500, 4000, 4000, 3500, 3000, 2500, 2000, 1500, 1300],
+            lineTension: 0,
+            backgroundColor: '#007bff',
+            borderColor: '#007bff',
+            borderWidth: 5,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+    <script src="js/smooth-scroll.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]', {
+        // Selectors
+        ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+        header: null, // Selector for fixed headers (must be a valid CSS selector)
+
+        // Speed & Easing
+        speed: 1500, // Integer. How fast to complete the scroll in milliseconds
+        offset: 0, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+        easing: 'easeInOutCubic', // Easing pattern to use
+        customEasing: function (time) {}, // Function. Custom easing pattern
+
+        // Callback API
+        before: function () {}, // Callback to run before scroll
+        after: function () {} // Callback to run after scroll
+        });
+    </script>
+  </body>
+</html>
